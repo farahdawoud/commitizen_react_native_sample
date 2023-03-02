@@ -32,7 +32,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Sync Versions
-        run: npm i -g json && json -I -f package.json -e "this.version=\"${{ env.REVISION }}\"" && ls && cd CommitizenTest && npx react-native-version
+        run: npm i -g json && json -I -f package.json -e "this.version=\"${{ env.REVISION }}\"" && npm i && npx react-native-version
 
       - name: Commit files
         uses: test-room-7/action-update-file@v1
