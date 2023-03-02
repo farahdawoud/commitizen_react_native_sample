@@ -1,3 +1,13 @@
+## 0.5.0 (2023-03-02)
+
+### Feat
+
+- **Workflow**: Syncing versions
+
+### Fix
+
+- **Workflow**: Fixing pre run issue
+
 ## 0.4.1 (2023-03-02)
 
 ### Fix
