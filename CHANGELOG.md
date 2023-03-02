@@ -1,3 +1,9 @@
+## 2.1.1 (2023-03-02)
+
+### Fix
+
+- **workflow**: Fixing pipeline react-native-version issue
+
 ## 2.1.0 (2023-03-02)
 
 ### Feat
