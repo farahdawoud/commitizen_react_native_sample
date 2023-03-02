@@ -10,14 +10,14 @@ permissions:
 
 jobs:
   bump-version:
-    if: "!startsWith(github.event.head_commit.message, 'bump:')"    
+    if: "!startsWith(github.event.head_commit.message, 'bump:')"
     runs-on: ubuntu-latest
-    name: "Bump version and create changelog with commitizen"    
+    name: 'Bump version and create changelog with commitizen'
     steps:
       - name: Check out
         uses: actions/checkout@v2
         with:
-          token: "${{ secrets.PERSONAL_ACCESS_TOKEN }}"          
+          token: '${{ secrets.PERSONAL_ACCESS_TOKEN }}'
           fetch-depth: 0
       - name: Create bump and changelog
         uses: commitizen-tools/commitizen-action@master
@@ -27,7 +27,17 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          body_path: "body.md"          
+          body_path: 'body.md'
           tag_name: ${{ env.REVISION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Sync Versions
+        pre-run: npm i -g json
+        run: json -I -f package.json -e "this.version=\"${{ env.REVISION }}\""
+
+      - name: Commit files
+        uses: test-room-7/action-update-file@v1
+        with:
+          file-path: package.json
+          commit-msg: bump:updated package.json
+          github-token: ${{ secrets.GITHUB_TOKEN }}
