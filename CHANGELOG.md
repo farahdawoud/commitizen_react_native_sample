@@ -1,3 +1,13 @@
+## 2.0.0 (2023-03-02)
+
+### BREAKING CHANGE
+
+- Changing baseurl
+
+### Feat
+
+- **server**: Changing config for server url
+
 ## 1.0.0 (2023-03-02)
 
 ### Fix
