@@ -1,3 +1,9 @@
+## 2.1.0 (2023-03-02)
+
+### Feat
+
+- **Commitizen**: Implement syncing version with Android and IOS files and package.json
+
 ## 2.0.0 (2023-03-02)
 
 ### BREAKING CHANGE
