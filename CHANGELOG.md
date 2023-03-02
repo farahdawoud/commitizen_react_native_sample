@@ -1,3 +1,13 @@
+## 0.4.0 (2023-03-02)
+
+### Feat
+
+- **commitizen**: workflow
+
+### Fix
+
+- **packagejson-version**: s
+
 ## 0.3.0 (2023-03-02)
 
 ### Feat
