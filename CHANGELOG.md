@@ -1,3 +1,14 @@
+## 0.3.0 (2023-03-02)
+
+### Feat
+
+- **refactoring**: removing unnecessary imports
+
+### Fix
+
+- **Testing**: testing package.json verison update
+- **commitizen**: returning the cz.json fil
+
 ## 0.2.0 (2023-03-02)
 
 ### Feat
