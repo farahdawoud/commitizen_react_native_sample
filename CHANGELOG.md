@@ -1,3 +1,9 @@
+## 0.4.1 (2023-03-02)
+
+### Fix
+
+- **Fixing-version**: package.json version fixed
+
 ## 0.4.0 (2023-03-02)
 
 ### Feat
