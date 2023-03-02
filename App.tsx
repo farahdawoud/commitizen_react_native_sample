@@ -3,6 +3,7 @@ import {
   SafeAreaView,
   ScrollView,
   StatusBar,
+  Text,
   useColorScheme,
   View,
 } from 'react-native';
@@ -29,7 +30,9 @@ function App(): JSX.Element {
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}></View>
+          }}>
+          <Text>Hello World</Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
