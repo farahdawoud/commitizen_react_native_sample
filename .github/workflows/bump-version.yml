@@ -32,7 +32,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Sync Versions
-        pre-run: npm i -g json
+        run: npm i -g json
         run: json -I -f package.json -e "this.version=\"${{ env.REVISION }}\""
 
       - name: Commit files
