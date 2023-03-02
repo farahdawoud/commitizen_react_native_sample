@@ -1,2 +1,2 @@
 # commitizen_node_sample
-This is a sample node js application to test commitizen
+This is a sample react native application to test commitizen
