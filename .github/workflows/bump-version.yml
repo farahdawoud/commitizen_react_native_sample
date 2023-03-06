@@ -31,6 +31,7 @@ jobs:
           tag_name: ${{ env.REVISION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Sync Versions
         run: npm i -g json && json -I -f package.json -e "this.version=\"${{ env.REVISION }}\"" && npm i && npx react-native-version
 
@@ -43,5 +44,5 @@ jobs:
             android/app/build.gradle
             ios/CommitizenTest.xcodeproj/project.pbxproj
             ios/CommitizenTestTests/Info.plist
-          commit-msg: bump:updated package.json to version ${{ env.REVISION }}
+          commit-msg: bump:updated package.json, android, and IOS files to version ${{ env.REVISION }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
