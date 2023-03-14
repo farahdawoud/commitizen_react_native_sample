@@ -46,3 +46,10 @@ jobs:
             ios/CommitizenTestTests/Info.plist
           commit-msg: bump:updated package.json, android, and IOS files to version ${{ env.REVISION }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create a new version in the Versioning Dashboard
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://1b3d-37-245-27-67.in.ngrok.io/api/v1/app-version'
+          method: 'POST'
+          customHeaders: '{"Content-Type": "application/json"}'
+          data: '{"appName": "versioning_app", "version": "${{ env.REVISION }}", "platform": "ANDROID", "forceUpgrade": false, "flexibleUpgrade": true, "updateMessage": "Hi! We are excited to let you know about our latest update. This update includes bug fixes and performance improvements to make your experience better."}'
