@@ -50,10 +50,10 @@ jobs:
         id: createVersionDashboardRequest
         uses: fjogeleit/http-request-action@v1
         with:
-          url: 'https://1b3d-37-245-27-67.in.ngrok.io/api/v1/app-version'
+          url: 'https://versioning-demo-380709.el.r.appspot.com/api/v1/automated/app-version'
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json"}'
-          data: '{"appName": "versioning_app", "version": "${{ env.REVISION }}", "platform": "REACT_NATIVE", "forceUpgrade": false, "flexibleUpgrade": true, "updateMessage": "Hi! We are excited to let you know about our latest update. This update includes bug fixes and performance improvements to make your experience better."}'
+          data: '{"appName": "versioning_app", "version": "${{ env.REVISION }}", "platform": ["ANDROID", "IOS"], "environment": "PROD", "forceUpgrade": false, "flexibleUpgrade": true, "updateMessage": "Hi! We are excited to let you know about our latest update. This update includes bug fixes and performance improvements to make your experience better."}'
       - name: Show Create Version Response
         run: |
           echo ${{ steps.createVersionDashboardRequest.outputs.response }}
