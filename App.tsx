@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 
 import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
-import {readVersion, writeVersion} from './syncVersions';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -17,9 +16,6 @@ function App(): JSX.Element {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
-  let version = readVersion();
-  writeVersion(version);
 
   return (
     <SafeAreaView style={backgroundStyle}>
